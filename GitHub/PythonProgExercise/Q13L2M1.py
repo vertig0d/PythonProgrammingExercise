@@ -8,12 +8,14 @@ DIGITS 3
 '''
 
 digits = []
-numbs = ['1','2','3','4','5','6','7','8','9','0']
+words = []
 print('Enter a sentence with numbers: ')
-ip = input().split(' ')
+ip = input()
 for item in ip:
-    if numbs in item:
+    if item.isdigit():
         digits.append(item)
-        ip.remove(item)
-print('LETTERS ',len(ip))
+    #you need to mention the item is alpha otherwise the count is incorrect
+    elif item.isalpha():    
+        words.append(item)
+print('LETTERS ',len(words))
 print('DIGITS ', len(digits))
